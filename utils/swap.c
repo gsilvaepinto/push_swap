@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 17:30:13 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/11 21:29:26 by gsilvaepint      ###   ########.fr       */
+/*   Created: 2026/03/11 19:10:44 by gsilvaepint       #+#    #+#             */
+/*   Updated: 2026/03/11 21:21:52 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	sa(t_list **a)
 {
-	t_list	*a;
-	t_list	*b;
+	int	tmp;
 
-	a = NULL;
-	b = NULL;
-	if (argc <= 1)
-		exit_prog(0, &a);
-	parse_values(argv, &a);
-	if (is_ordered(a) == 0)
+	if (*a && (*a)->next)
 	{
-		if (ft_lstsize(a) == 2)
-			sa(&a);
+		tmp = (*a)->data;
+		(*a)->data = (*a)->next->data;
+		(*a)->next->data = tmp;
+		write(1, "sa\n", 3);
 	}
-	exit_prog(0, &a);
+}
+
+void	sb(t_list **b)
+{
+	int	tmp;
+
+	if (*b && (*b)->next)
+	{
+		tmp = (*b)->data;
+		(*b)->data = (*b)->next->data;
+		(*b)->next->data = tmp;
+		write(1, "sb\n", 3);
+	}
 }

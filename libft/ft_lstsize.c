@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 17:30:13 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/11 21:29:26 by gsilvaepint      ###   ########.fr       */
+/*   Created: 2026/03/11 19:05:59 by gsilvaepint       #+#    #+#             */
+/*   Updated: 2026/03/11 19:06:52 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*a;
-	t_list	*b;
+	int i;
 
-	a = NULL;
-	b = NULL;
-	if (argc <= 1)
-		exit_prog(0, &a);
-	parse_values(argv, &a);
-	if (is_ordered(a) == 0)
+	i = 0;
+	while (lst)
 	{
-		if (ft_lstsize(a) == 2)
-			sa(&a);
+		lst = lst->next;
+		i++;
 	}
-	exit_prog(0, &a);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:44:45 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/11 17:59:53 by gsilvaepint      ###   ########.fr       */
+/*   Updated: 2026/03/11 18:28:44 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,30 @@ void	insert(t_list **a, int value)
 	tmp->next = NULL;
 	tmp->index= -1;
 	ft_lstadd_back(a, tmp);
+}
+
+void	check_dup(int value, t_list **a)
+{
+	t_list	*tmp;
+
+	tmp = *a;
+	while (tmp)
+	{
+		if (value == tmp->data)
+			exit_prog(1, a);
+		tmp = tmp->next;
+	}
+}
+
+int	is_ordered(t_list *a)
+{
+	while (a && a->next)
+	{
+		if (a->data > a->next->data)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }
 
 void	print_lst(t_list *a)
