@@ -6,7 +6,7 @@
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:44:45 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/12 12:01:05 by gsilvaepint      ###   ########.fr       */
+/*   Updated: 2026/03/12 16:28:02 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,24 @@ int	is_ordered(t_list *a)
 	return (1);
 }
 
-void	print_lst(t_list *a)
+void	assign_index(t_list **a)
 {
-	while (a)
+	t_list	*tmp;
+	t_list	*inside;
+	int		count;
+
+	tmp = (*a);
+	while (tmp)
 	{
-		printf("%d\n", a->data);
-		a = a->next;
+		count = 0;
+		inside = (*a);
+		while (inside)
+		{
+			if (inside->data < tmp->data)
+				count++;
+			inside = inside->next;
+		}
+		tmp->index = count;
+		tmp = tmp->next;
 	}
 }

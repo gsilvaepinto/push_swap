@@ -6,11 +6,11 @@
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 13:00:49 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/12 13:24:00 by gsilvaepint      ###   ########.fr       */
+/*   Updated: 2026/03/12 16:36:20 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rra(t_list **a)
 {

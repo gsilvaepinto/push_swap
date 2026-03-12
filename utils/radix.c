@@ -1,26 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 19:05:59 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/12 16:27:47 by gsilvaepint      ###   ########.fr       */
+/*   Created: 2026/03/12 16:16:23 by gsilvaepint       #+#    #+#             */
+/*   Updated: 2026/03/12 16:36:45 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	get_bits(int size)
 {
+	int	bits;
+
+	bits = 0;
+	while ((size - 1) >> bits)
+		bits++;
+	return (bits);
+}
+
+void	radix(t_list **a, t_list **b)
+{
+	int	size;
+	int	bits;
 	int	i;
+	int	j;
 
 	i = 0;
-	while (lst)
+	size = ft_lstsize(*a);
+	bits = get_bits(size);
+	while (i < bits)
 	{
-		lst = lst->next;
+		j = 0;
+		while (j < size)
+		{
+			if (((*a)->index >> i) & 1)
+				ra(a);
+			else
+				pb(a, b);
+			j++;
+		}
+		while (*b)
+			pa(a, b);
 		i++;
 	}
-	return (i);
 }
