@@ -6,7 +6,7 @@
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:00:07 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/11 21:28:02 by gsilvaepint      ###   ########.fr       */
+/*   Updated: 2026/03/12 12:17:47 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,13 @@ int		is_ordered(t_list *a);
 // LIBFT
 t_list	*ft_lstlast(t_list *lst);\
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 
 // OPERATIONS
 void	sa(t_list **a);
 void	sb(t_list **b);
+void	ss(t_list **a,	t_list	**b);
 
 
 #endif

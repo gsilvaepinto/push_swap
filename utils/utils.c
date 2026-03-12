@@ -6,7 +6,7 @@
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:44:45 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/11 18:28:44 by gsilvaepint      ###   ########.fr       */
+/*   Updated: 2026/03/12 12:01:05 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	insert(t_list **a, int value)
 		exit_prog(1, a);
 	tmp->data = value;
 	tmp->next = NULL;
-	tmp->index= -1;
+	tmp->index = -1;
 	ft_lstadd_back(a, tmp);
 }
 

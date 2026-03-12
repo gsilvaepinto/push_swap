@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_prog.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 17:32:00 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/11 23:43:24 by gsilvaepint      ###   ########.fr       */
+/*   Created: 2026/03/12 12:14:49 by gsilvaepint       #+#    #+#             */
+/*   Updated: 2026/03/12 12:15:57 by gsilvaepint      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	free_lst(t_list **a)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
-
-	while (*a)
-	{
-		tmp = (*a);
-		(*a) = (*a)->next;
-		free(tmp);
-	}
-}
-
-void	exit_prog(int i, t_list **a)
-{
-	if (i)
-		write(2, "Error\n", 6);
-	if (*a && a)
-		free_lst(a);
-	exit(i);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
