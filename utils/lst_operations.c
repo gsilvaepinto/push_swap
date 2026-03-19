@@ -1,27 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   lst_operations.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilheda <guilheda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 09:24:41 by guilheda          #+#    #+#             */
-/*   Updated: 2026/03/19 14:01:37 by guilheda         ###   ########.fr       */
+/*   Created: 2026/03/19 14:09:33 by guilheda          #+#    #+#             */
+/*   Updated: 2026/03/19 14:10:38 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned int	i;
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
+}
 
-	if (!s || !f)
-		return ;
+int	ft_lstsize(t_list *lst)
+{
+	int	i;
+
 	i = 0;
-	while (s[i])
+	while (lst != NULL)
 	{
-		f(i, &s[i]);
 		i++;
+		lst = lst->next;
 	}
+	return (i);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*last;
+
+	last = ft_lstlast(*lst);
+	if (last)
+		last->next = new;
+	else
+		*lst = new;
 }

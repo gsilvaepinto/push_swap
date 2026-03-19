@@ -82,7 +82,10 @@ You can pipe the output into a checker to verify correctness, or count operation
 ./push_swap 3 1 4 2 5 | wc -l
 
 # Verify the result is actually sorted (prints OK or KO)
-./push_swap 3 1 4 2 5 | ./checker_Mac 3 1 4 2 5
+./push_swap 3 1 4 2 5 | ./checker_OS 3 1 4 2 5
+
+# Verify OS
+OS = Mac || linux
 ```
 
 ### Error Handling
