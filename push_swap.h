@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
+/*   By: guilheda <guilheda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:00:07 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/12 16:27:12 by gsilvaepint      ###   ########.fr       */
+/*   Updated: 2026/03/19 11:56:15 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int		find_index_pos(t_list **a, int target);
 // LIBFT
 t_list	*ft_lstlast(t_list *lst);\
 void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 
 // OPERATIONS
