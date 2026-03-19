@@ -1,20 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guilheda <guilheda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 09:16:49 by guilheda          #+#    #+#             */
-/*   Updated: 2026/03/19 14:00:41 by guilheda         ###   ########.fr       */
+/*   Created: 2025/10/30 09:19:22 by guilheda          #+#    #+#             */
+/*   Updated: 2025/10/30 09:40:04 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	*ft_memmove(void *dest, const void *src, size_t count)
 {
-	while (lst && lst->next)
-		lst = lst->next;
-	return (lst);
+	const unsigned char	*srcptr;
+	unsigned char		*destptr;
+	size_t				i;
+
+	if (!dest && !src)
+		return (NULL);
+	srcptr = src;
+	destptr = dest;
+	if (destptr > srcptr)
+	{
+		while (count--)
+		{
+			destptr[count] = srcptr[count];
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < count)
+		{
+			destptr[i] = srcptr[i];
+			i++;
+		}
+	}
+	return (dest);
 }

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lastadd_back.c                                  :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
+/*   By: guilheda <guilheda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/11 17:54:23 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/11 17:55:47 by gsilvaepint      ###   ########.fr       */
+/*   Created: 2025/10/30 09:24:41 by guilheda          #+#    #+#             */
+/*   Updated: 2026/03/19 14:01:37 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	t_list	*last;
+	unsigned int	i;
 
-	last = ft_lstlast(*lst);
-	if (last)
-		last->next = new;
-	else
-		*lst = new;
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

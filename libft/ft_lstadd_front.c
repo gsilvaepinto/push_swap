@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
+/*   By: guilheda <guilheda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 12:14:49 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/12 12:15:57 by gsilvaepint      ###   ########.fr       */
+/*   Created: 2025/10/30 09:15:19 by guilheda          #+#    #+#             */
+/*   Updated: 2026/03/19 14:01:11 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

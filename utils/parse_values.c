@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_values.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsilvaepinto <gsilvaepinto@student.42.f    +#+  +:+       +#+        */
+/*   By: guilheda <guilheda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:36:52 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/12 16:36:30 by gsilvaepint      ###   ########.fr       */
+/*   Updated: 2026/03/19 13:47:08 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	parse_values(char **argv, t_list **a)
 		{
 			while (*str == ' ')
 				str++;
+			if (!*str)
+				break ;
 			is_num(str, a);
 			num = ft_atoi(&str, a);
 			check_dup(num, a);

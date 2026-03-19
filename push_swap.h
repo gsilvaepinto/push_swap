@@ -6,7 +6,7 @@
 /*   By: guilheda <guilheda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 17:00:07 by gsilvaepint       #+#    #+#             */
-/*   Updated: 2026/03/19 11:56:15 by guilheda         ###   ########.fr       */
+/*   Updated: 2026/03/19 14:03:59 by guilheda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include "../libft/libft.h"
 
 typedef struct s_list
 {
